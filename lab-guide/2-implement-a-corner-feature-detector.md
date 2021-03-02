@@ -26,7 +26,7 @@ In `CornerDetector`, we have available the private members `g_kernel_` and `dg_k
 
 Go to `CornerDetector::detect(...)` in [corner_detector.cpp:17](https://github.com/tek5030/lab_03/blob/master/corner_detector.cpp#L17).
 
-Recall from last week's lectures that we can apply a linearly separable 2D filter by convolving an image with each of the two corresponding 1D filter components consecutively. 
+Recall from the earlier lecture about image filtering that we can apply a linearly separable 2D filter by convolving an image with each of the two corresponding 1D filter components consecutively. 
 Also recall that we can estimate the image gradients in noisy images by convolving with a filter that corresponds to a derivated Gaussian in one direction, and a Gaussian in the other.
 
 Use the 1D filter kernels in `g_kernel_` and `dg_kernel_` to compute the 2D gradient images *I*<sub>x</sub> and *I*<sub>y</sub> by using the OpenCV function [cv::sepFilter2D](https://docs.opencv.org/4.0.1/d4/d86/group__imgproc__filter.html#ga910e29ff7d7b105057d1625a4bf6318d).
