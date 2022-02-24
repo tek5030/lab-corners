@@ -77,7 +77,22 @@ CircleEstimate CircleEstimator::ransacEstimator(const Eigen::Matrix2Xf& pts) con
 
 Circle CircleEstimator::leastSquaresEstimator(const Eigen::Matrix2Xf& pts) const
 {
-  // Least-squares problem has the form A*p=b.
+  // The equations for the points (x_i, y_i) on the circle (x_c, y_c, r) is:
+  //     (x_i - x_c)^2 + (y_i - y_c)^2 = r^2
+  //
+  // By multiplying out, we get the linear equations
+  //     (2*x_c)*x_i + (2*y_c)*y_i + (r^2 - x_c^2 - y_x^2) = x_i^2 + y_i^2
+  //
+  // The least-squares problem then has the form A*p = b, where
+  //     A = [x_i, y_i, 1],
+  //     p = [2*x_c, 2*y_c, r^2 - x_c^2 - y_x^2]^T,
+  //     b = [x_i^2 + y_i^2]
+  //
+  // by solving for p = [p_0, p_1, p_2], we get the following estimates for the circle parameters:
+  //     x_c = 0.5 * p_0,
+  //     y_c = 0.5 * p_1,
+  //     r = sqrt(p_2 + x_c^2 + y_c^2)
+
   // Construct A and b.
   Eigen::MatrixXf A(pts.cols(), 3);
   A.leftCols(2) = pts.transpose();
