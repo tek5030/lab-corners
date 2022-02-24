@@ -1,11 +1,11 @@
-#include "lab_3.h"
+#include "lab_corners.h"
 #include <iostream>
 
 int main()
 {
   try
   {
-    lab3();
+    runLabCorners();
   }
   catch (const std::exception& e)
   {

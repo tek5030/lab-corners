@@ -6,9 +6,9 @@ It may seem like a bad idea to use corners to detect circles, but not when the s
 To demonstrate the power of RANSAC, we will try to detect the circle above by finding the largest set of inlier points that lies on the circumference of a common circle.
 
 ## 8. Finish `CircleEstimator`
-Take a look at the class declaration and documentation in [circle_estimator.h](https://github.com/tek5030/lab_03/blob/master/circle_estimator.h).
+Take a look at the class declaration and documentation in [circle_estimator.h](../circle_estimator.h).
 
-Now, read the code in `CircleEstimator::ransacEstimator` at [circle_estimator.cpp:31](https://github.com/tek5030/lab_03/blob/master/circle_estimator.cpp#L31).
+Now, read the code in `CircleEstimator::ransacEstimator` at [circle_estimator.cpp](../circle_estimator.cpp).
 
 The only thing you have to do to make this work is to remove the `break` and perform the correct test in the if-statement.
 Do it!
@@ -41,7 +41,7 @@ You can also switch back to debug mode whenever you want.
 
 Run the application in release mode, and see what happens!
 
-## Play around with lab 3
+## Play around with the lab
 Now, the code is finished!
 
 It is now time to play:
