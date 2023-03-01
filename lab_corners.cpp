@@ -16,7 +16,7 @@ void runLabCorners()
 
   if (!cap.isOpened())
   {
-    throw std::runtime_error("Could not open camera");
+    throw std::runtime_error("Could not open camera by index " + std::to_string(camera_id));
   }
 
   // Create window.
